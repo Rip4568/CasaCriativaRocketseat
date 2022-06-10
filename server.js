@@ -56,13 +56,14 @@ const server = express()
     },
 ] */
 
-//configurar arquivos estaticos
+//configurar arquivos estaticos (imagem,video,css,JavaScript,...)
 server.use(express.static("public"))
+
+//habilitar o uso do req.body
+server.use(express.urlencoded({ extended:true }))
 
 //configuração do nunjucks - npm i nunjucks
 const nunjucks = require("nunjucks")
-
-
 nunjucks.configure("views", {
     express:server,
     noCache:true,
@@ -145,7 +146,32 @@ server.get("/ideas.html", function(req,res) {
 
 //receber os dados via POST
 server.post("/",function (req,res) {
-    res.send("OK")
+    const query = `
+    INSERT INTO ideas(
+        image,
+        title,
+        category,
+        description,
+        url
+        ) VALUES (?,?,?,?,?)
+    `
+
+  const values = [
+    req.body.image,
+    req.body.title,
+    req.body.category,
+    req.body.description,
+    req.body.url,
+  ]
+  
+  db.run(query,values,function(err){
+    if(err) {
+        console.log(res);
+        return res.send(`ERRO AO PROCESSAR O COMANDO SQL
+        <br>\n${err}`)
+    }
+        return res.redirect("/ideas.html")
+  })
 })
 
 //servidor ligado na porta 8000
