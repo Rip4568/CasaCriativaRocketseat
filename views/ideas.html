@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontes do google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <!-- fontes do google -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>ideias - Casa Criativa</title>
+</head>
+<body id="page-ideas">
+    
+    <div id="container">
+        <header>
+            <a href="/">
+                <img src="logo-removebackground.png" alt="casa-criativa-gradiente-roxo-azul" width="300rem">
+            </a>
+            <nav>
+                <li><a href="/">Inicio</a></li>
+                <!-- <li><a href="#">Ideias</a></li> -->
+                <li><a onclick="onOff()" href="#" >Nova ideia</a></li>
+            </nav>
+        </header>
+    
+        <section id="title">
+            <p>Em exibição</p>
+            <h1>Ideias</h1>
+        </section>
+    
+        <main>
+            <section id="ideas"><!-- todas as ideias criadas -->
+                
+            {% for ideia in ideias %}
+                <div class="idea">
+                    <img src="{{ ideia.image }}"
+                    alt="{{ ideia.title }}"
+                    >
+                    <div class="content">
+                        <h3>{{ ideia.title }}</h3>
+                        <p>{{ ideia.category }}</p>
+                        <div class="description">{{ ideia.description }}</div>
+                        <a href="{{ ideia.url }}" target="_blank">Ir para a ideia</a>
+                    </div>
+                </div>
+            {% endfor %}
+            </section>
+        </main>
+    
+        <footer>
+            <p id="footer">Projeto finalizado graças a <a href="https://Rocketseat.com.br" target="_blank" id="link">RocketSeat</a> ❤️</p>
+        </footer>
+    </div>
+
+    <!-- MODAL -->
+    {% include "modal.html" %}
+    
+
+    <script src="/js/scripts.js"></script>
+
+</body>
+</html>
