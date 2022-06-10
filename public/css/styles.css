@@ -236,15 +236,15 @@ body #modal .content {
 }
 
 #modal form {
-    width: 80%;
-    max-width: 800px;
+    width: 60%;
+    max-width: 600px;
 
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    gap: 20px;
+    gap: 2px;
 }
 
 .content form div:nth-child(3),
@@ -254,7 +254,7 @@ body #modal .content {
 }
 
 .input-wrapper {
-    margin: 16px 0;
+    margin: 8px 0;
 }
 
 form textarea,
