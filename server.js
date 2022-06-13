@@ -1,6 +1,6 @@
-const db = require("./db")
-const express = require("express")
-const server = express()
+const db = require("./db");
+const express = require("express");
+const server = express();
 
 //carregue o banco de dados sqlite3 instalado pelo modulo npm i  sqlite3
 
@@ -57,96 +57,95 @@ const server = express()
 ] */
 
 //configurar arquivos estaticos (imagem,video,css,JavaScript,...)
-server.use(express.static("public"))
+server.use(express.static("src"));
 
 //habilitar o uso do req.body
-server.use(express.urlencoded({ extended:true }))
+server.use(express.urlencoded({ extended: true }));
 
 //configuração do nunjucks - npm i nunjucks
-const nunjucks = require("nunjucks")
-nunjucks.configure("views", {
-    express:server,
-    noCache:true,
-})
-
-
+const nunjucks = require("nunjucks");
+nunjucks.configure("src", {
+  express: server,
+  noCache: true,
+});
 
 function pegarUltimasIdeias(quantidadeDeIdeias) {
-    db.all(`SELECT * FROM ideas`,function (err,rows) {
-        if(err) return `ERRO AO PROCESAR O COMANDO, ${err}`
-        const ideiasReversed = [...rows].reverse()
-        const lastIdeias = []
-        for (const iterator of ideiasReversed) {
-            if (lastIdeias.length < quantidadeDeIdeias && quantidadeDeIdeias > 0) {/*  && quantidadeDeIdeias <= ideias.length */
-                lastIdeias.push(iterator)
-            } else { return lastIdeias }
-        }
-        return lastIdeias
-    })
+  db.all(`SELECT * FROM ideas`, function (err, rows) {
+    if (err) return `ERRO AO PROCESAR O COMANDO, ${err}`;
+    const ideiasReversed = [...rows].reverse();
+    const lastIdeias = [];
+    for (const iterator of ideiasReversed) {
+      if (lastIdeias.length < quantidadeDeIdeias && quantidadeDeIdeias > 0) {
+        /*  && quantidadeDeIdeias <= ideias.length */
+        lastIdeias.push(iterator);
+      } else {
+        return lastIdeias;
+      }
+    }
+    return lastIdeias;
+  });
 }
 
 function quantidadeTotalIdeias() {
-    db.all(`SELECT count(*) from ideas`,function (err,rows) {
-        if(err) return `ERRO AO PROCESSAR O COMANDO ${err}`//caso apresente erro, sair da função apresentando o erro
-        
-        const todasAsIdeias = rows.length  
-        variavel_global = todasAsIdeias
-        console.log(`Valor retornado dentro da consulta SQL : ${todasAsIdeias}`);
+  db.all(`SELECT count(*) from ideas`, function (err, rows) {
+    if (err) return `ERRO AO PROCESSAR O COMANDO ${err}`; //caso apresente erro, sair da função apresentando o erro
 
-        return todasAsIdeias
-    })
+    const todasAsIdeias = rows.length;
+    variavel_global = todasAsIdeias;
+    console.log(`Valor retornado dentro da consulta SQL : ${todasAsIdeias}`);
+
+    return todasAsIdeias;
+  });
 }
 
-server.get("/", function (req,res) {//raiz do projeto
-    /* data = new Date()
+server.get("/", function (req, res) {
+  //raiz do projeto
+  /* data = new Date()
     horasAtuais = `${data.getHours()} : ${data.getMinutes()}`
     console.log(`Servidor iniciado e rodando! ${horasAtuais}`) */
 
-    /* return res.sendFile(__dirname + "/index.html") */
+  /* return res.sendFile(__dirname + "/index.html") */
 
-    const quantidadeDeIdeias = 2 // selecionar a quantidade de ideas a ser mostrada na pagina index
-    db.all(`SELECT * FROM ideas`, function (err,rows) {
-        if(err) {
-            console.log(res);
-            return res.send(`ERRO AO PROCESSAR O COMANDO SQL
-            <br>\n${err}`)
-        }
+  const quantidadeDeIdeias = 2; // selecionar a quantidade de ideas a ser mostrada na pagina index
+  db.all(`SELECT * FROM ideas`, function (err, rows) {
+    if (err) {
+      console.log(res);
+      return res.send(`ERRO AO PROCESSAR O COMANDO SQL
+            <br>\n${err}`);
+    }
 
-        const todasAsIdeiasReverse = [...rows].reverse()
-        const ultimasIdeias = []
-        for (const iterator of todasAsIdeiasReverse) {
-            if(ultimasIdeias < quantidadeDeIdeias ) {
-                ultimasIdeias.push(iterator)
-            }
-        }
-        return res.render("index.html", {ideias:ultimasIdeias})    
-    })
+    const todasAsIdeiasReverse = [...rows].reverse();
+    const ultimasIdeias = [];
+    for (const iterator of todasAsIdeiasReverse) {
+      if (ultimasIdeias.length < quantidadeDeIdeias) {
+        ultimasIdeias.push(iterator);
+      }
+    }
+    return res.render("index.html", { ideias: ultimasIdeias });
+  });
 
-    /* const last_ideias = pegarUltimasIdeias(2)//selecionada 2 por opção do editor
+  /* const last_ideias = pegarUltimasIdeias(2)//selecionada 2 por opção do editor
     return res.render("index.html", {ideias:last_ideias}) */
-})
+});
 
-
-server.get("/ideas.html", function(req,res) {
-    console.log(req.query);
-    //selecionar todas as ideias
-    db.all(`SELECT * FROM ideas`, function (err,rows) {
-        if(err) {
-            console.log(res);
-            return res.send(`ERRO AO PROCESSAR O COMANDO SQL
-            <br>\n${err}`)
-        }
-
-        const todasAsIdeiasReverse = [...rows].reverse()
-        return res.render("ideas.html",{ideias:todasAsIdeiasReverse})
-    })
-    /* return res.render("ideas.html", {ideias:quantidadeTotalIdeias()}) */
-})
-
+server.get("/ideas.html", function (req, res) {
+  console.log(req.query);
+  //selecionar todas as ideias
+  db.all(`SELECT * FROM ideas`, function (err, rows) {
+    if (err) {
+      console.log(res);
+      return res.send(`ERRO AO PROCESSAR O COMANDO SQL
+            <br>\n${err}`);
+    }
+    const todasAsIdeiasReverse = [...rows].reverse();
+    return res.render("ideas.html", { ideias: todasAsIdeiasReverse });
+  });
+  /* return res.render("ideas.html", {ideias:quantidadeTotalIdeias()}) */
+});
 
 //receber os dados via POST
-server.post("/",function (req,res) {
-    const query = `
+server.post("/", function (req, res) {
+  const query = `
     INSERT INTO ideas(
         image,
         title,
@@ -154,7 +153,7 @@ server.post("/",function (req,res) {
         description,
         url
         ) VALUES (?,?,?,?,?)
-    `
+    `;
 
   const values = [
     req.body.image,
@@ -162,17 +161,17 @@ server.post("/",function (req,res) {
     req.body.category,
     req.body.description,
     req.body.url,
-  ]
-  
-  db.run(query,values,function(err){
-    if(err) {
-        console.log(res);
-        return res.send(`ERRO AO PROCESSAR O COMANDO SQL
-        <br>\n${err}`)
+  ];
+
+  db.run(query, values, function (err) {
+    if (err) {
+      console.log(res);
+      return res.send(`ERRO AO PROCESSAR O COMANDO SQL
+        <br>\n${err}`);
     }
-        return res.redirect("/ideas.html")
-  })
-})
+    return res.redirect("/ideas.html");
+  });
+});
 
 //servidor ligado na porta 8000
-server.listen('8000')
+server.listen("8000");
