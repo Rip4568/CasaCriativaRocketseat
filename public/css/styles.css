@@ -24,9 +24,13 @@ a:hover {
   text-decoration: none;
 }
 
-.a-button {
+button.a-button {
+  color: white;
   background-color: rgba(27, 177, 47, 0.822);
   margin-right: 10px;
+}
+.a-button:hover {
+  cursor: pointer;
 }
 
 p,
@@ -304,7 +308,7 @@ form a:hover {
 
   text-decoration: none;
 }
-
+/* 
 form button {
   border-radius: 13px;
   background-color: rgba(27, 177, 47, 0.822);
@@ -322,7 +326,7 @@ form button {
   justify-self: end;
 
   transition: 300ms;
-}
+} */
 
 form button:hover {
   background-color: rgb(29, 168, 134);
