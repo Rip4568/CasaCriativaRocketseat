@@ -192,7 +192,7 @@ footer {
 body #modal {
   /* background-color: #ff5E84; */
   background-color: rgba(73, 71, 187, 0.9);
-  position: absolute; /* o ideial seria fixed */
+  position: fixed; /* o ideial seria fixed */
 
   top: 0;
   bottom: 0;
