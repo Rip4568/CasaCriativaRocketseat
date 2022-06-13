@@ -1,281 +1,272 @@
-
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #e5e5e5;
-    color: #25282B;
-    
-    margin: 0;
-    
+  font-family: "Montserrat", sans-serif;
+  background-color: #e5e5e5;
+  color: #25282b;
+
+  margin: 0;
 }
 
-
-
 #modal.hide {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 a {
-    color: #ff5E84;
-    font-weight: bold;
-    text-decoration: none;
+  color: #ff5e84;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #ff5E84;
-    font-weight: bold;
-    text-decoration: none;
+  color: #ff5e84;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-p, .description {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1px;
+.a-button {
+  background-color: rgba(27, 177, 47, 0.822);
+  margin-right: 10px;
+}
+
+p,
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
 }
 
 #container {
+  width: 80%; /* se ajustar quando o max-width for menor que 980px */
+  max-width: 980px;
 
-    width: 80%;/* se ajustar quando o max-width for menor que 980px */
-    max-width: 980px;
+  margin: auto;
 
-    
-    margin: auto;
-    
-    padding: 10px;
-    
+  padding: 10px;
 
-    /* margin:40px, auto; */
+  /* margin:40px, auto; */
 
-    /* background-color: rgb(119, 136, 168); */
+  /* background-color: rgb(119, 136, 168); */
 
-    display: flex;
-
+  display: flex;
 }
 
 #intro {
-
-    width: 300px;
-    padding-right: 64px;/* colocado manualmente pois estava muito junto o bloco intro das ideas */
+  width: 300px;
+  padding-right: 64px; /* colocado manualmente pois estava muito junto o bloco intro das ideas */
 }
 
 main {
-    margin: 32px, 0;
+  margin: 32px, 0;
 }
 
 #buttons {
-    justify-content: space-evenly;
-    display: flex;
+  justify-content: space-evenly;
+  display: flex;
 
-    margin-bottom: 32px;/* talvez seja desnecessario, testes deverão ser feitos */
+  margin-bottom: 32px; /* talvez seja desnecessario, testes deverão ser feitos */
 }
 
 button {
-    background-color:  rgb(90, 57, 207);
-    color: rgb(99, 97, 228);;
-    background: none;
-    
-    border: none;
-    
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: bold;
-    letter-spacing: 0.2px;
+  background-color: rgb(90, 57, 207);
+  color: rgb(99, 97, 228);
+  background: none;
 
-    cursor: pointer;
+  border: none;
 
-    outline: none;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  outline: none;
 }
 
 button:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #buttons button.no-fat {
-    background-color: rgba(255, 255, 255, 0.76);
-    border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.76);
+  border-radius: 6px;
 
-    width: 120px;
-    height: 40px;
+  width: 120px;
+  height: 40px;
 
-    box-shadow: 0px, 8px, 16px rgba(255, 0, 92, 0.16);
+  box-shadow: 0px, 8px, 16px rgba(255, 0, 92, 0.16);
 }
 #buttons button.fat {
+  color: white;
+  background-color: rgb(99, 97, 228);
+  border-radius: 6px;
 
-    color: white;
-    background-color: rgb(99, 97, 228);
-    border-radius: 6px;
-    
-    width: 120px;
-    height: 40px;
-    
+  width: 120px;
+  height: 40px;
 
-    box-shadow: 0px, 8px, 16px rgba(255, 0, 92, 0.16);
+  box-shadow: 0px, 8px, 16px rgba(255, 0, 92, 0.16);
 }
 
 #buttons button.fat:hover {
-    text-decoration: none;
-    background-color: #ff5E84;
-    transition: 0.5s;
+  text-decoration: none;
+  background-color: #ff5e84;
+  transition: 0.5s;
 }
 
 button.no-fat:hover {
-    text-decoration: none;/* tirar o sublinhamento da pagina */
+  text-decoration: none; /* tirar o sublinhamento da pagina */
 }
 footer {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0.2px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
 
-    color: #777;
+  color: #777;
 }
 
 footer a #link {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 /* porque existe os dois ? */
 #footer a {
-    color: #25282b;
+  color: #25282b;
 }
 
 #buttons,
 footer {
-    text-align: center;
+  text-align: center;
 }
 
-
 .hide {
-    display: none;
+  display: none;
 }
 
 .idea {
-    display: flex;
+  display: flex;
 
-    background-color: #FFF;
-    box-shadow: 0 4px 16px -8px rgb(144, 57, 161);
-    border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px -8px rgb(144, 57, 161);
+  border-radius: 8px;
 
-    padding: 32px;
+  padding: 32px;
 
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .idea img {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 
-    padding-top: 30px;
-    margin-right: 32px;
+  padding-top: 30px;
+  margin-right: 32px;
 }
 
 .idea h3 {
-    margin: 0;
+  margin: 0;
 }
 
-.idea p{
-    margin: 8px;
-    color:#777;
+.idea p {
+  margin: 8px;
+  color: #777;
 }
 
 .idea .description {
-    margin: 16px 0;
+  margin: 16px 0;
 }
 
 /* estelização do botão salvar, ficou mais bonitinho */
 #modal .content #form-button-salvar:hover {
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* MODAL ================================ */
 
 body #modal {
-    /* background-color: #ff5E84; */
-    background-color: rgba(73, 71, 187, 0.9);
-    position: absolute;/* o ideial seria fixed */
+  /* background-color: #ff5E84; */
+  background-color: rgba(73, 71, 187, 0.9);
+  position: absolute; /* o ideial seria fixed */
 
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 
-    /* width: 100vw;
+  /* width: 100vw;
     height: 100vh; */
 
-    display: flex;/* não altera nada quando só tem um item dentro do escopo */
-    /* align-items: center;/* alinha todos os itens no eixo y */ 
-    justify-content: center;/* alinha todos os itens do eixo x */
+  display: flex; /* não altera nada quando só tem um item dentro do escopo */
+  /* align-items: center;/* alinha todos os itens no eixo y */
+  justify-content: center; /* alinha todos os itens do eixo x */
 }
 
 #modal.addScroll {
-    overflow: auto;
+  overflow: auto;
 }
 
 body .hideScroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 body #modal .content {
-    /*margin-top: 1%; afastamento do top, talvez remover */
+  /*margin-top: 1%; afastamento do top, talvez remover */
 
-    color: white;
-
+  color: white;
 }
 
 #modal .content h1 {
-    text-align: center;
-    text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #modal .content .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #modal form {
-    width: 60%;
-    max-width: 600px;
+  width: 60%;
+  max-width: 600px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    gap: 2px;
+  gap: 2px;
 }
 
 .content form div:nth-child(3),
 .content form div:nth-child(4),
-.content form div:nth-child(5){
-    grid-column: span 2;
+.content form div:nth-child(5) {
+  grid-column: span 2;
 }
 
 .input-wrapper {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 form textarea,
 form input {
-    width: 100%;
+  width: 100%;
 
-    padding: 12px;/* deixa os inputs mais 'gorddos' */
-    
-    box-sizing: border-box;
-    
-    border-radius: 6px;
+  padding: 12px; /* deixa os inputs mais 'gorddos' */
 
-    border: 1px solid rgba(207, 10, 10,0.5);
+  box-sizing: border-box;
+
+  border-radius: 6px;
+
+  border: 1px solid rgba(207, 10, 10, 0.5);
 }
 
 form label {
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0.8px;
-
-    
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0.8px;
 }
 
 /* form button {
@@ -287,146 +278,144 @@ form label {
     border-radius: 13px;
 } */
 
-
 /* formas proposta pelo video */
 form a {
-    width: 150px;
-    height: 40px;
+  width: 150px;
+  height: 40px;
 
-    background-color: #fffff222;
-    color: white;
+  background-color: #fffff222;
+  color: white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 
-    justify-self: end;
+  justify-self: end;
 
-    transition: 400ms;
+  transition: 400ms;
 }
 
 form a:hover {
-    background-color: #fff;
-    color: #ff5E84;
+  background-color: #fff;
+  color: #ff5e84;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 form button {
-    border-radius: 13px;
-    background-color: rgba(27, 177, 47, 0.822);
-    border-radius: 6px;
+  border-radius: 13px;
+  background-color: rgba(27, 177, 47, 0.822);
+  border-radius: 6px;
 
-    width: 120px;
-    height: 40px;
+  width: 120px;
+  height: 40px;
 
-    margin-top: 32px;
+  margin-top: 32px;
 
-    color: #0d3b0d;
+  color: #0d3b0d;
 
-    grid-column: 2;
+  grid-column: 2;
 
-    justify-self: end;
+  justify-self: end;
 
-    transition: 300ms;
+  transition: 300ms;
 }
 
 form button:hover {
-    background-color: rgb(29, 168, 134);
+  background-color: rgb(29, 168, 134);
 }
 
 /* IDEIA.HTML */
 #page-ideas #container {
-    display: block;
+  display: block;
 }
 #page-ideas header {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #page-ideas nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #page-ideas nav li {
-    list-style-type: none;
+  list-style-type: none;
 
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 #page-ideas nav li a {
-    color: black;
+  color: black;
 }
 
 #page-ideas nav li:last-child {
-    margin: 0px;
+  margin: 0px;
 
-    width: 150px;
-    height: 40px;
+  width: 150px;
+  height: 40px;
 
-    display: flex;/* foi necessario essas 3 configurações 
+  display: flex; /* foi necessario essas 3 configurações 
     para tornar a frase dentro do butão centralizado */
 
-    /* text-align: center; ???? */
-    align-items: center;
-    justify-content: center;
+  /* text-align: center; ???? */
+  align-items: center;
+  justify-content: center;
 
-    background-color: #ff5E84;
-    
-    border-radius: 8px;
-   
+  background-color: #ff5e84;
+
+  border-radius: 8px;
 }
 
 #page-ideas nav li:last-child:hover {
-    background-color: rgb(99, 97, 228);
-    transition: 0.5s;
-    opacity: 0.9;
+  background-color: rgb(99, 97, 228);
+  transition: 0.5s;
+  opacity: 0.9;
 }
 
-#page-ideas nav li:last-child a{
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-}   
+#page-ideas nav li:last-child a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
 
 section#title {
-    text-align: center;
-    /*  up-down   left-right */
-    margin: 65px 0;
+  text-align: center;
+  /*  up-down   left-right */
+  margin: 65px 0;
 }
 
 section#title p {
-    opacity: 0.7;
+  opacity: 0.7;
 
-    margin: 0;
+  margin: 0;
 }
 
 section#title h1 {
-    margin: 0;
+  margin: 0;
 
-    font-size: 28px;
+  font-size: 28px;
 }
 
 section#ideas {
-    display: grid;/* 2 x 2 um otimo sistema para deixar os 
+  display: grid; /* 2 x 2 um otimo sistema para deixar os 
     objetos alinhados, não esquecer de colocar o gap para afastamento
     */
 
-    grid-template-columns: 1fr 1fr;
-    
-    gap: 20px;/* distanciamento de cada um dos itens */
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px; /* distanciamento de cada um dos itens */
 }
 
 section#ideas .idea {
-    margin: 0;
+  margin: 0;
 }
 
 section#title,
 section#ideas,
 footer {
-    margin-top: 64px;
+  margin-top: 64px;
 }
