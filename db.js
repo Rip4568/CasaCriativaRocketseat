@@ -29,14 +29,14 @@ db.serialize(function () {
     ) VALUES (?,?,?,?,?)
   `
 
-  const values = [
+  /* const values = [
     "https://cdn-icons-png.flaticon.com/512/6974/6974905.png",
     "Curso de Programação",
     "Estudo",
     `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
     Eaque cumque magni saepe maxime tempore debitis at asperiores praesentium veritatis ipsam, voluptate harum quas et, beatae omnis libero voluptatem reprehenderit repellendus.`,
     "https://rocketseat.com.br",
-  ]
+  ] */
   
   /* db.run(query,values,function(err){
     if (err) return console.log(`Aconteceu algum erro durante a processagem de dadso \n ${err}`)
@@ -57,7 +57,6 @@ db.serialize(function () {
     //caso contrario, continue
     console.log(rows);
   }) */
-
 })
 
 //exportar o modulo ao carregar
