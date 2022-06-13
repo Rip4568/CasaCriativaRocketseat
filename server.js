@@ -1,10 +1,9 @@
-const db = require("./db")
+const db = require("./db.js")
 const express = require("express")
 const server = express()
 
 //carregue o banco de dados sqlite3 instalado pelo modulo npm i  sqlite3
 
-//server.use(express.json())
 /* const ideias = [
     {
         img:"https://cdn-icons-png.flaticon.com/512/6974/6974905.png",
@@ -115,7 +114,7 @@ server.get("/", function (req,res) {//raiz do projeto
         const todasAsIdeiasReverse = [...rows].reverse()
         const ultimasIdeias = []
         for (const iterator of todasAsIdeiasReverse) {
-            if(ultimasIdeias < quantidadeDeIdeias ) {
+            if(ultimasIdeias.length < quantidadeDeIdeias ) {
                 ultimasIdeias.push(iterator)
             }
         }
